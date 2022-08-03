@@ -66,7 +66,9 @@ function displayData(information) {
 
   display.classList.add("container", "mx-auto", "my-12", "w-2/5", "text-2xl", "flex", "flex-col", "gap-y-6");
 
-  locationName.textContent = `${information.name}`;
+  let locationCountry = new Intl.DisplayNames(["en"], {type: "region"});
+
+  locationName.textContent = `${information.name}, ${locationCountry.of(information.country)}`;
   longitude.textContent = `Longitude: ${information.coordinates.lon}`;
   latitude.textContent = `Latitude: ${information.coordinates.lat}`;
   feelsLike.textContent = `Feels like: ${information.main.feels_like}\u00B0C`;

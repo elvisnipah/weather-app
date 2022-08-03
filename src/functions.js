@@ -12,7 +12,8 @@ function processData(data) {
     main: data.main,
     name: data.name,
     weather: data.weather,
-    wind: data.wind
+    wind: data.wind,
+    country: data.sys.country
   };
   return processedData;
 }
